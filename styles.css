@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --color-navy: 213 58% 11%;
-    --color-gold: 42 52% 54%;
+    --color-gold: 46 65% 52%;
     --color-cream: 36 38% 94%;
     --color-slate: 215 14% 34%;
     --color-white: 0 0% 100%;
@@ -101,4 +101,47 @@
 
 .animate-slide-up {
   animation: slide-up var(--duration-mid) var(--ease-expo) forwards;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4)); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Immersive carousel shimmer */
+@keyframes shimmer-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer-line {
+  animation: shimmer-line 3s ease-in-out infinite;
+}
+
+/* Carousel parallax drift */
+@keyframes parallax-drift {
+  0% { transform: scale(1.05) translate(0, 0); }
+  25% { transform: scale(1.08) translate(10px, -5px); }
+  50% { transform: scale(1.1) translate(-5px, -10px); }
+  75% { transform: scale(1.08) translate(-10px, 5px); }
+  100% { transform: scale(1.05) translate(0, 0); }
+}
+
+.animate-parallax-drift {
+  animation: parallax-drift 20s ease-in-out infinite;
 }

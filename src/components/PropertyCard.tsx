@@ -9,9 +9,9 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   return (
-    <div className="bg-white border border-navy/5 rounded-sm overflow-hidden hover:shadow-[0_20px_60px_-15px_rgba(13,27,42,0.12)] transition-all duration-500 group">
+    <div className="bg-white border border-navy/5 rounded-sm overflow-hidden hover:shadow-glow-sm hover:border-gold/30 hover:-translate-y-2 transition-all duration-500 group">
       <div className="aspect-[4/3] bg-cream relative overflow-hidden">
-        <img src={property.image} alt={property.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        <img src={property.image} alt={property.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out" loading="lazy" />
         {/* Gradient overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-navy">

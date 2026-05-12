@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MetricCard from '../components/MetricCard';
 import SectionDivider from '../components/SectionDivider';
+import ImmersiveCarousel from '../components/ImmersiveCarousel';
 import { clientTestimonials } from '../data/testimonials';
 import { awards } from '../data/awards';
 
@@ -28,21 +29,21 @@ const Home = () => {
             <h1 className="font-display font-bold leading-[1] mb-2">
               <span className="block">
                 {'Building Value.'.split('').map((char, i) => (
-                  <motion.span key={`l1-${i}`} initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)', textShadow: ['0 0 0px rgba(201,168,76,0)', '0 0 30px rgba(201,168,76,0.4)', '0 0 0px rgba(201,168,76,0)'] }} transition={{ opacity: { duration: 1.2, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, y: { duration: 1.4, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, filter: { duration: 1.6, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, textShadow: { duration: 2.5, delay: 0.8 + i * 0.06, ease: 'easeInOut' } }} className="inline-block text-5xl md:text-7xl lg:text-8xl" style={{ color: '#d4be7a' }}>{char === ' ' ? '\u00A0' : char}</motion.span>
+                  <motion.span key={`l1-${i}`} initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)', textShadow: ['0 0 0px rgba(212,175,55,0)', '0 0 40px rgba(212,175,55,0.7)', '0 0 10px rgba(212,175,55,0.2)'] }} transition={{ opacity: { duration: 1.2, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, y: { duration: 1.4, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, filter: { duration: 1.6, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }, textShadow: { duration: 2.5, delay: 0.8 + i * 0.06, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse', repeatDelay: 3 } }} className="inline-block text-5xl md:text-7xl lg:text-8xl" style={{ color: '#D4AF37' }}>{char === ' ' ? '\u00A0' : char}</motion.span>
                 ))}
               </span>
               <span className="block mt-2 md:mt-4">
                 {'Managing Excellence.'.split('').map((char, i) => (
-                  <motion.span key={`l2-${i}`} initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)', textShadow: ['0 0 0px rgba(201,168,76,0)', '0 0 25px rgba(201,168,76,0.3)', '0 0 0px rgba(201,168,76,0)'] }} transition={{ opacity: { duration: 1.2, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, y: { duration: 1.4, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, filter: { duration: 1.6, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, textShadow: { duration: 2.5, delay: 2.0 + i * 0.05, ease: 'easeInOut' } }} className="inline-block text-4xl md:text-6xl lg:text-7xl" style={{ color: '#b8a570' }}>{char === ' ' ? '\u00A0' : char}</motion.span>
+                  <motion.span key={`l2-${i}`} initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)', textShadow: ['0 0 0px rgba(212,175,55,0)', '0 0 30px rgba(212,175,55,0.6)', '0 0 5px rgba(212,175,55,0.1)'] }} transition={{ opacity: { duration: 1.2, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, y: { duration: 1.4, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, filter: { duration: 1.6, delay: 1.6 + i * 0.05, ease: [0.16, 1, 0.3, 1] }, textShadow: { duration: 2.5, delay: 2.0 + i * 0.05, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse', repeatDelay: 3 } }} className="inline-block text-4xl md:text-6xl lg:text-7xl" style={{ color: '#E7D19B' }}>{char === ' ' ? '\u00A0' : char}</motion.span>
                 ))}
               </span>
             </h1>
             <div className="relative mt-10 md:mt-14 flex items-center justify-center">
-              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.8, delay: 3.2, ease: [0.16, 1, 0.3, 1] }} className="h-px w-48 md:w-72 origin-center" style={{ background: 'linear-gradient(90deg, transparent, #c9a84c, transparent)' }} />
-              <motion.div initial={{ opacity: 0, scale: 0, rotate: 45 }} animate={{ opacity: 1, scale: 1, rotate: 45 }} transition={{ duration: 0.6, delay: 3.8, ease: [0.16, 1, 0.3, 1] }} className="absolute size-2 bg-gold" />
-              <motion.div initial={{ x: '-150px', opacity: 0 }} animate={{ x: '150px', opacity: [0, 1, 0] }} transition={{ duration: 2, delay: 4.2, ease: 'easeInOut', repeat: Infinity, repeatDelay: 6 }} className="absolute h-px w-16 md:w-24" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent)' }} />
+              <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.8, delay: 3.2, ease: [0.16, 1, 0.3, 1] }} className="h-px w-48 md:w-72 origin-center" style={{ background: 'linear-gradient(90deg, transparent, #D4AF37, transparent)' }} />
+              <motion.div initial={{ opacity: 0, scale: 0, rotate: 45 }} animate={{ opacity: 1, scale: 1, rotate: 45 }} transition={{ duration: 0.6, delay: 3.8, ease: [0.16, 1, 0.3, 1] }} className="absolute size-2 bg-gold animate-pulse-glow" />
+              <motion.div initial={{ x: '-150px', opacity: 0 }} animate={{ x: '150px', opacity: [0, 1, 0] }} transition={{ duration: 2, delay: 4.2, ease: 'easeInOut', repeat: Infinity, repeatDelay: 6 }} className="absolute h-px w-16 md:w-24" style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent)' }} />
             </div>
-            <motion.div animate={{ opacity: [0, 0.06, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.15) 0%, transparent 70%)' }} />
+            <motion.div animate={{ opacity: [0, 0.12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.2) 0%, transparent 70%)' }} />
           </div>
           {/* Scroll indicator */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 5, duration: 1 }} className="absolute bottom-32 left-1/2 -translate-x-1/2 z-10">
@@ -52,8 +53,8 @@ const Home = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 4.5, ease: [0.16, 1, 0.3, 1] }} className="absolute bottom-16 left-0 right-0 z-10 flex justify-center px-6">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/about" className="bg-gold text-navy px-8 py-4 font-bold flex items-center justify-center hover:bg-gold-300 transition-all group text-sm tracking-wide">Explore Our Services <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" /></Link>
-              <Link to="/communities" className="border border-white/20 text-white px-8 py-4 font-bold hover:bg-white/10 transition-all text-center text-sm tracking-wide">Find a Community</Link>
+              <Link to="/about" className="bg-gold text-navy px-8 py-4 font-bold flex items-center justify-center hover:bg-white hover:text-navy hover:shadow-glow transition-all duration-500 group text-sm tracking-wide">Explore Our Services <ArrowRight className="ml-2 size-4 group-hover:translate-x-2 transition-transform duration-500" /></Link>
+              <Link to="/communities" className="border border-gold/40 text-white px-8 py-4 font-bold hover:bg-gold/10 hover:border-gold hover:shadow-glow-sm transition-all duration-500 text-center text-sm tracking-wide">Find a Community</Link>
             </div>
           </motion.div>
         </section>
@@ -71,6 +72,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Immersive Environment Carousel */}
+        <ImmersiveCarousel />
 
         <SectionDivider variant="diamond" className="bg-cream" />
 
@@ -98,7 +102,7 @@ const Home = () => {
                 </div>
               </Link>
               {/* Construction */}
-              <Link to="/services/construction" className="bg-white p-6 border border-navy/5 hover:border-t-2 hover:border-t-gold hover:shadow-xl transition-all group block relative overflow-hidden">
+              <Link to="/services/construction" className="bg-white p-6 border border-navy/5 hover:border-gold/40 hover:shadow-glow-sm hover:-translate-y-2 transition-all duration-500 group block relative overflow-hidden">
                 <span className="text-[80px] font-display font-light text-navy/[0.03] absolute top-2 right-6 leading-none">02</span>
                 <HardHat className="size-7 text-navy group-hover:text-gold transition-colors mb-6" />
                 <h3 className="text-xl font-display font-bold text-navy mb-3">Construction</h3>
@@ -108,7 +112,7 @@ const Home = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Management */}
-              <Link to="/services/management" className="bg-white p-6 border border-navy/5 hover:border-t-2 hover:border-t-gold hover:shadow-xl transition-all group block relative overflow-hidden">
+              <Link to="/services/management" className="bg-white p-6 border border-navy/5 hover:border-gold/40 hover:shadow-glow-sm hover:-translate-y-2 transition-all duration-500 group block relative overflow-hidden">
                 <span className="text-[80px] font-display font-light text-navy/[0.03] absolute top-2 right-6 leading-none">03</span>
                 <HomeIcon className="size-7 text-navy group-hover:text-gold transition-colors mb-6" />
                 <h3 className="text-xl font-display font-bold text-navy mb-3">Property Management</h3>
@@ -116,7 +120,7 @@ const Home = () => {
                 <span className="text-xs font-bold tracking-widest uppercase text-navy/30 flex items-center group-hover:text-gold transition-colors">Learn More <ChevronRight className="ml-1 size-3" /></span>
               </Link>
               {/* Affordable Housing */}
-              <Link to="/services/affordable-housing" className="bg-white p-6 border border-navy/5 hover:border-t-2 hover:border-t-gold hover:shadow-xl transition-all group block relative overflow-hidden">
+              <Link to="/services/affordable-housing" className="bg-white p-6 border border-navy/5 hover:border-gold/40 hover:shadow-glow-sm hover:-translate-y-2 transition-all duration-500 group block relative overflow-hidden">
                 <span className="text-[80px] font-display font-light text-navy/[0.03] absolute top-2 right-6 leading-none">04</span>
                 <ShieldCheck className="size-7 text-navy group-hover:text-gold transition-colors mb-6" />
                 <h3 className="text-xl font-display font-bold text-navy mb-3">Affordable Housing</h3>
@@ -184,7 +188,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className={`relative p-8 md:p-10 ${i === 1 ? 'bg-white/[0.08] border border-gold/20 md:scale-105 md:py-14' : 'bg-white/[0.03] border border-white/[0.06]'} transition-all`}
+                  className={`relative p-8 md:p-10 ${i === 1 ? 'bg-white/[0.08] border border-gold/30 md:scale-105 md:py-14 shadow-glow-sm' : 'bg-white/[0.03] border border-white/[0.06] hover:border-gold/20 hover:bg-white/[0.05] hover:-translate-y-1 hover:shadow-glow-sm'} transition-all duration-500 group`}
                 >
                   {/* Decorative quote mark */}
                   <span className="absolute top-4 right-6 text-[100px] font-display font-bold text-white/[0.02] leading-none select-none">"</span>

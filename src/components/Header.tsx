@@ -29,6 +29,30 @@ const Header = () => {
 
   useEffect(() => { setIsOpen(false); }, [location]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+      document.body.style.position = 'fixed';
+      document.body.style.inset = '0';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.inset = '';
+      document.body.style.width = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.inset = '';
+      document.body.style.width = '';
+    };
+  }, [isOpen]);
+
   const isDarkPage = location.pathname === '/';
 
   return (
@@ -78,13 +102,13 @@ const Header = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div initial={{ opacity: 0, x: '100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }} transition={{ type: 'spring', damping: 25, stiffness: 200 }} className="fixed inset-0 z-50 bg-navy lg:hidden">
+          <motion.div initial={{ opacity: 0, x: '100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }} transition={{ type: 'spring', damping: 25, stiffness: 200 }} className="fixed inset-0 z-[100] bg-navy lg:hidden" style={{ touchAction: 'none', overscrollBehavior: 'contain' }}>
             <div className="flex flex-col h-full p-8">
               <div className="flex justify-between items-center mb-16">
                 <span className="font-display text-2xl font-bold tracking-[0.15em] text-white">PARADIGM</span>
                 <button onClick={() => setIsOpen(false)} className="text-white"><X className="size-8" /></button>
               </div>
-              <div className="flex-1 space-y-6 overflow-y-auto">
+              <div className="flex-1 space-y-6 overflow-y-auto" style={{ touchAction: 'pan-y', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch' }}>
                 {navigation.map((item) => (
                   <div key={item.name} className="space-y-3">
                     <Link to={item.href} className="block text-2xl font-display text-white/90 hover:text-gold transition-colors">{item.name}</Link>
